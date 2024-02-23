@@ -55,8 +55,8 @@ const PostCard = ({ image, category, title, description, views, user, extra, but
             {description && <p className='text-[#5C5C5C] mt-2'>{description}</p>}
             {extra && 
             <div className='flex gap-12 text-sm my-3'>
-                <div>{extra.label}</div>
-                <div>{extra.location}</div>
+                <div><i class="fa-solid fa-briefcase"></i> {extra.label}</div>
+                <div><i class="fa-solid fa-location-dot"></i> {extra.location}</div>
             </div>
             }
             {button && <button style={{color: button==='Visit Website'? '#E56135' : '#02B875'}} className='font-semibold w-full border rounded my-2 py-2'>{button}</button> }
