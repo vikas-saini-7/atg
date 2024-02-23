@@ -1,5 +1,6 @@
 import React from 'react'
 import PostCard from './PostCard'
+import Sidebar from './Sidebar'
 
 const DUMMY_DATA = [
   {
@@ -32,15 +33,15 @@ const Main = () => {
   return (
     <div className='custom-container-2'>
       {/* TOP HOMEPAGE NAVIGATION  */}
-      <div className='flex justify-between items-center mt-4 border-b sticky top-0 pt-2 bg-white'>
-          <div className='flex gap-6 -mb-3'>
+      <div className='flex justify-between items-center border-b sticky top-0 py-4 bg-white'>
+          <div className='flex gap-6 -mb-1'>
             <p className='border-b-2 border-gray-500 pb-1'>All Posts (32)</p>
-            <p className='text-gray-500 cursor-pointer border-gray-400 hover:text-black transition-all active:text-blue-500 mb-3'>Article</p>
-            <p className='text-gray-500 cursor-pointer border-gray-400 hover:text-black transition-all active:text-blue-500 mb-3'>Event</p>
-            <p className='text-gray-500 cursor-pointer border-gray-400 hover:text-black transition-all active:text-blue-500 mb-3'>Education</p>
-            <p className='text-gray-500 cursor-pointer border-gray-400 hover:text-black transition-all active:text-blue-500 mb-3'>Job</p>
+            <p className='text-gray-500 cursor-pointer border-gray-400 hover:text-black transition-all active:text-blue-500'>Article</p>
+            <p className='text-gray-500 cursor-pointer border-gray-400 hover:text-black transition-all active:text-blue-500'>Event</p>
+            <p className='text-gray-500 cursor-pointer border-gray-400 hover:text-black transition-all active:text-blue-500'>Education</p>
+            <p className='text-gray-500 cursor-pointer border-gray-400 hover:text-black transition-all active:text-blue-500'>Job</p>
           </div>
-          <div className='flex gap-2 mb-2'>
+          <div className='flex gap-2'>
             <button className='bg-gray-200 px-4 py-2 rounded-lg'>Write Post</button>
             <button  className='bg-blue-600 px-4 py-2 rounded-lg text-white'>Join Group</button>
           </div>
@@ -48,6 +49,7 @@ const Main = () => {
 
       {/* POSTS + Sidebar GRID  */}
       <div className='flex mt-8 gap-[5%]'>
+        {/* posts  */}
         <div className='w-[60%]'>
           {DUMMY_DATA.map((post, idx) => (
             <PostCard
@@ -61,7 +63,10 @@ const Main = () => {
             />
           ))}
         </div>
-        <div className='bg-gray-200 w-[35%]'>sidebar</div>
+        {/* sidebar  */}
+        <div className='w-[35%]'>
+          <Sidebar/>
+        </div>
       </div>
     </div>
   )
