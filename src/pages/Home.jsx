@@ -22,10 +22,12 @@ const Home = () => {
 
   const openModal = () => {
     setModalIsOpen(true);
+    document.body.style.overflow = 'hidden'; // prevent scrolling
   };
 
   const closeModal = () => {
     setModalIsOpen(false);
+    document.body.style.overflow = 'auto'; // prevent scrolling
   };
     
   return (
