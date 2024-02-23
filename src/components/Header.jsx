@@ -4,9 +4,15 @@ import SignUp from './SignUp';
 import SignIn from './SignIn';
 
 const Header = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(true);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [signUp, setSignUp] = useState(true);
 
+  const GoToSignIn = () => {
+    setSignUp(false)
+  }
+  const GoToSignUp = () => {
+    setSignUp(true)
+  }
   
   const openModal = () => {
     setModalIsOpen(true);
@@ -22,11 +28,10 @@ const Header = () => {
     <div>
       <ModalComponent isOpen={modalIsOpen} closeModal={closeModal}>
         {signUp ?
-          <SignUp/>
+          <SignUp GoToSignIn={GoToSignIn}/>
         :
-          <SignIn/>
+          <SignIn GoToSignUp={GoToSignUp}/>
         }
-        <button onClick={closeModal}>Close Modal</button>
       </ModalComponent>
     </div>
 

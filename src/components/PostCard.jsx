@@ -14,7 +14,7 @@ const PostCard = ({ image, category, title, description, views, user, extra, but
                 <div>{extra.location}</div>
             </div>
             }
-            {button && <button style={{color: button=='Visit Website'? '#E56135' : '#02B875'}} className='font-semibold w-full border rounded my-2 py-2'>{button}</button> }
+            {button && <button style={{color: button==='Visit Website'? '#E56135' : '#02B875'}} className='font-semibold w-full border rounded my-2 py-2'>{button}</button> }
             <div className='flex justify-between mt-4'>
                 <div className='flex items-center gap-3'>
                     <img className='w-10 rounded-full' src={user.image} alt="" />

@@ -13,7 +13,7 @@ const ModalComponent = ({ isOpen, closeModal, children }) => {
         <Modal
         isOpen={isOpen}
         onRequestClose={closeModal}
-        className="modal"
+        className="modal h-auto sm:h-[568px] lg:h-[548px]"
         overlayClassName="modal-overlay"
         >
         {children}
