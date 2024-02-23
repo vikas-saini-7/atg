@@ -27,8 +27,8 @@ const SignUp = ({GoToSignIn}) => {
                     <p>Sign up with Facebook</p>
                 </button>
                 <button className='rounded-lg bg-gray-100 w-full my-1 py-2 flex items-center justify-center gap-2'>
-                    <img src="./images/ggl.png" alt="" />
-                        <p>Sign up with Google</p>
+                    <img className='w-5'  src="./images/ggl.png" alt="" />
+                    <p>Sign up with Google</p>
                 </button>
                 </div>
             </form>
