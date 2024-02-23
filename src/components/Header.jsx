@@ -49,6 +49,7 @@ const Header = ({handleAuthenticated, modalIsOpen, setModalIsOpen, isAuthenticat
         <div className='flex items-center gap-3'>
           <img className='w-10 h-10 object-cover rounded-full' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWHjMzM5qzBjS64SJEIyCQkLgXODzDLznFPOt54tmyPNXP3BQ78_AN83FAlbeGujmuPCg&usqp=CAU' alt="" />
           <p>Siddharth Goyal</p>
+          <i class="fa-solid fa-chevron-down text-xs"></i>
         </div>
       :
         <div className='cursor-pointer' onClick={openModal}>Create account. <span className='text-blue-700 font-semibold'>It's free! </span><i class="fa-solid fa-chevron-down text-xs"></i></div>
