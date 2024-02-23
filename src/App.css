@@ -1,0 +1,14 @@
+.App {
+}
+.custom-container{
+    max-width: 1320px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: auto;
+}
+.custom-container-2{
+    max-width: 1080px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: auto;
+}
