@@ -67,7 +67,7 @@ const PostCard = ({ image, category, title, description, views, user, extra, but
                 </div>
                 <div className='flex items-center gap-6 text-gray-500'>
                     <p>{views} views</p>
-                    <p>share</p>
+                    <p><i className="fa-solid fa-share-nodes text-xl mr-2"></i></p>
                 </div>
             </div>
         </div>
