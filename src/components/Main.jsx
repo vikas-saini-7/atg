@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PostCard from './PostCard'
 import Sidebar from './Sidebar'
 
@@ -39,7 +39,7 @@ const DUMMY_DATA = [
     button: 'Visit Website',
     views: '1.4k',
     user: {
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcrIPUVHe81YZpOiRUNwRq32b7QEpEVP6YeuAImz3FaOtVYPTNNkRveATsieLpH2_kr4g&usqp=CAU',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWHjMzM5qzBjS64SJEIyCQkLgXODzDLznFPOt54tmyPNXP3BQ78_AN83FAlbeGujmuPCg&usqp=CAU',
       name: 'Ronal Jones'
     },
   },
@@ -59,11 +59,13 @@ const DUMMY_DATA = [
   },
 ]
 
-const Main = () => {
+const Main = ({isAuthenticated }) => {
+
+  const [joinBtn, setJoinBtn] = useState(true);
   return (
     <div className='custom-container-2'>
-      {/* TOP HOMEPAGE NAVIGATION  */}
-      <div className='flex justify-between items-center border-b sticky top-0 py-4 bg-white'>
+      {/* TOP HOMEPAGE NAVIGATION LARGE SCREEN */}
+      <div className='hidden md:flex justify-between items-center border-b sticky top-0 py-4 bg-white z-20'>
           <div className='flex gap-6 -mb-1'>
             <p className='border-b-2 border-gray-500 pb-1'>All Posts (32)</p>
             <p className='text-gray-500 cursor-pointer border-gray-400 hover:text-black transition-all active:text-blue-500'>Article</p>
@@ -72,15 +74,29 @@ const Main = () => {
             <p className='text-gray-500 cursor-pointer border-gray-400 hover:text-black transition-all active:text-blue-500'>Job</p>
           </div>
           <div className='flex gap-2'>
-            <button className='bg-gray-200 px-4 py-2 rounded-lg'>Write Post</button>
-            <button  className='bg-blue-600 px-4 py-2 rounded-lg text-white'>Join Group</button>
+            <button className='bg-gray-200 px-4 py-2 rounded-lg'>Write a Post <i class="fa-solid fa-chevron-down text-xs ml-1"></i></button>
+            {joinBtn ?
+            <button onClick={() => setJoinBtn(false)} className='bg-blue-600 border border-gray-50 px-4 py-2 rounded-lg text-white'><i class="fa-solid fa-user-plus mr-2"></i>Join Group</button>
+            :
+            <button onClick={() => setJoinBtn(true)} className='bg-white border border-gray-400 px-4 py-2 rounded-lg '><i class="fa-solid fa-arrow-right-from-bracket mr-2"></i>Leave Group</button>
+            }
+          </div>
+      </div>
+
+      {/* TOP HOMEPAGE NAVIGATION SMALL SCREEN */}
+      <div className='flex md:hidden justify-between items-center border-b sticky top-0 py-4 bg-white z-20'>
+          <div className='flex gap-6 -mb-1'>
+            <p className='border-b-2 border-gray-500 pb-1'>All Posts (32)</p>
+          </div>
+          <div className='flex gap-2'>
+            <button className='bg-gray-200 px-4 py-2 rounded-lg'>Filter: All <i class="fa-solid fa-chevron-down text-xs ml-1"></i></button>
           </div>
       </div>
 
       {/* POSTS + Sidebar GRID  */}
-      <div className='flex mt-8 gap-[5%]'>
+      <div className='flex flex-col md:flex-row  mt-8 gap-[5%]'>
         {/* posts  */}
-        <div className='w-[60%]'>
+        <div className='w-[100%] md:w-[60%]'>
           {DUMMY_DATA.map((post, idx) => (
             <PostCard
               key={post.id}
@@ -96,8 +112,8 @@ const Main = () => {
           ))}
         </div>
         {/* sidebar  */}
-        <div className='w-[35%]'>
-          <Sidebar/>
+        <div className='w-[100%] md:w-[35%] hidden md:block'>
+          <Sidebar isAuthenticated={isAuthenticated}/>
         </div>
       </div>
     </div>
