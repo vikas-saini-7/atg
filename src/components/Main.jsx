@@ -27,6 +27,36 @@ const DUMMY_DATA = [
       name: 'Sarah West'
     },
   },
+  {
+    id:3,
+    image: 'https://images.unsplash.com/photo-1610644386043-f130348930da?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    category: '🗓️ Meetup',
+    title: 'Software Developer',
+    extra: {
+      label: 'Fri, 12 Oct, 2018',
+      location: 'Ahmedabad, India'
+    },
+    button: 'Visit Website',
+    views: '1.4k',
+    user: {
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcrIPUVHe81YZpOiRUNwRq32b7QEpEVP6YeuAImz3FaOtVYPTNNkRveATsieLpH2_kr4g&usqp=CAU',
+      name: 'Ronal Jones'
+    },
+  },
+  {
+    id:4,category: '💼️ Job',
+    title: 'Tax Benefits for Investment under National Pension Scheme launched by Government',
+    extra: {
+      label: 'Innovaccer Analytics Private Ltd.',
+      location: 'Noida, India'
+    },
+    button: 'Apply on Timesjobs',
+    views: '1.4k',
+    user: {
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcrIPUVHe81YZpOiRUNwRq32b7QEpEVP6YeuAImz3FaOtVYPTNNkRveATsieLpH2_kr4g&usqp=CAU',
+      name: 'Joseph Gray'
+    },
+  },
 ]
 
 const Main = () => {
@@ -60,6 +90,8 @@ const Main = () => {
               description={post.description}
               views={post.views}
               user={post.user}
+              button={post.button}
+              extra={post.extra}
             />
           ))}
         </div>
